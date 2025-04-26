@@ -111,7 +111,7 @@ with upload_tab:
 
     if analyze:
         if not uploaded_files or not jd:
-            st.warning("\u26a0\ufe0f Upload at least one resume and paste JD.")
+            st.warning("⚠️ Upload at least one resume and paste JD.")
         else:
             st.session_state.batch_results = []
             with st.spinner("Analyzing resumes..."):
@@ -152,28 +152,28 @@ with results_tab:
                     match_percentage = 0.0
 
                 if match_percentage >= 85:
-                    badge = "\ud83d\udfe2 Excellent"
+                    badge = "🟢 Excellent"
                 elif match_percentage >= 60:
-                    badge = "\ud83d\udfe1 Good"
+                    badge = "🟡 Good"
                 else:
-                    badge = "\ud83d\udd34 Needs Improvement"
+                    badge = "🔴 Needs Improvement"
 
-                st.subheader(f"\ud83d\udcca JD Match: {match_percentage:.1f}% ({badge})")
+                st.subheader(f"📊 JD Match: {match_percentage:.1f}% ({badge})")
                 fig = px.pie(values=[match_percentage, 100-match_percentage], names=['Match', 'Gap'], title='Match Overview')
                 st.plotly_chart(fig, use_container_width=True)
 
                 # Missing Keywords
                 missing_keywords = result.get("MissingKeywords", [])
                 if missing_keywords:
-                    st.subheader("\ud83d\udd39 Missing Keywords")
+                    st.subheader("🔹 Missing Keywords")
                     st.write(", ".join(missing_keywords))
                     bar_fig = px.bar(x=missing_keywords, y=[1]*len(missing_keywords), labels={'x':'Keywords','y':'Importance'})
                     st.plotly_chart(bar_fig, use_container_width=True)
                 else:
-                    st.success("\ud83c\udf89 No missing keywords! Perfect Match!")
+                    st.success("🎉 No missing keywords! Perfect Match!")
 
                 # Profile Summary
-                st.subheader("\ud83e\uddd0 Profile Summary")
+                st.subheader("🤐 Profile Summary")
                 st.info(result.get('Profile Summary', 'No summary provided.'))
 
             st.markdown("</div>", unsafe_allow_html=True)
@@ -189,4 +189,4 @@ with results_tab:
         st.info("📝 Please upload and analyze resumes first.")
 
 # Footer
-st.markdown("<div class='footer'>Built with \u2764\ufe0f using Streamlit and Gemini 1.5</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Built with ❤️ using Streamlit and Gemini 1.5</div>", unsafe_allow_html=True)
