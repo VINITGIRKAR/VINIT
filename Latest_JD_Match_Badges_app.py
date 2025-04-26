@@ -95,19 +95,19 @@ st.markdown(f"<p style='text-align:center;color:{textColor};'>Analyze and Boost 
 st.write("---")
 
 # Tabs
-upload_tab, results_tab = st.tabs(["\ud83d\udce5 Upload & Analyze", "\ud83d\udcca Results"])
+upload_tab, results_tab = st.tabs(["📥 Upload & Analyze", "📊 Results"])
 
 if 'batch_results' not in st.session_state:
     st.session_state.batch_results = []
 
 with upload_tab:
-    st.header("\ud83d\udcda Upload Resumes & Paste JD")
+    st.header("📚 Upload Resumes & Paste JD")
     jd = st.text_area("Paste Job Description", height=200)
     uploaded_files = st.file_uploader("Upload one or multiple resumes (PDF/DOCX)", type=["pdf", "docx"], accept_multiple_files=True)
 
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        analyze = st.button("\ud83d\ude80 Start Analysis", use_container_width=True)
+        analyze = st.button("🚀 Start Analysis", use_container_width=True)
 
     if analyze:
         if not uploaded_files or not jd:
@@ -131,13 +131,13 @@ with upload_tab:
                 st.balloons()
 
 with results_tab:
-    st.header("\ud83d\udcca Analysis Results")
+    st.header("📊 Analysis Results")
 
     if st.session_state.batch_results:
         for result in st.session_state.batch_results:
             st.markdown(f"""
             <div class='card'>
-            <h3>\ud83d\udcda {result.get('filename','Resume')}</h3>
+            <h3>{'📚' + result.get('filename', 'Resume')}</h3>
             """, unsafe_allow_html=True)
 
             if "raw_response" in result:
@@ -179,14 +179,14 @@ with results_tab:
             st.markdown("</div>", unsafe_allow_html=True)
 
         st.download_button(
-            label="\ud83d\udce5 Download Full Batch Report (JSON)",
+            label="📦 Download Full Batch Report (JSON)",
             data=json.dumps(st.session_state.batch_results, indent=4),
             file_name="batch_resume_analysis.json",
             mime="application/json",
             use_container_width=True
         )
     else:
-        st.info("\ud83d\udcda Please upload and analyze resumes first.")
+        st.info("📝 Please upload and analyze resumes first.")
 
 # Footer
 st.markdown("<div class='footer'>Built with \u2764\ufe0f using Streamlit and Gemini 1.5</div>", unsafe_allow_html=True)
