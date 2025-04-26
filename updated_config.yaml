@@ -1,0 +1,20 @@
+credentials:
+  usernames:
+    johndoe:
+      email: johndoe@example.com
+      name: John Doe
+      password: '$2b$12$KIXToPKXZL0hdPM53hOfhu6htTDP9eZ3pTIiDWBe8lvPO3l2Q/HCa'  # (hashed)
+    janedoe:
+      email: janedoe@example.com
+      name: Jane Doe
+      password: '$2b$12$8vD6i9J6j1u0/8uUi8Xiyu3T5VZ3u4/NhXYaBcT7hBB0TChq7NGSS'  # (hashed)
+
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+
+preauthorized:
+  emails:
+    - johndoe@example.com
+    - janedoe@example.com
