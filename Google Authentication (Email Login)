@@ -1,1 +1,27 @@
+import streamlit as st
+from streamlit_oauth import OAuth2Component
+
+oauth = OAuth2Component(
+    client_id=st.secrets["GOOGLE_CLIENT_ID"],
+    client_secret=st.secrets["GOOGLE_CLIENT_SECRET"],
+    authorize_endpoint="https://accounts.google.com/o/oauth2/auth",
+    token_endpoint="https://oauth2.googleapis.com/token",
+    revoke_endpoint="https://oauth2.googleapis.com/revoke",
+)
+
+result = oauth.authorize_button(
+    name="Continue with Google",
+    icon="🔒",
+    redirect_uri="http://localhost:8501",  # or your deployed URL
+    scopes=["openid", "email", "profile"],
+    pkce=True
+)
+
+if result and "token" in result:
+    st.success("Logged in successfully 🎉")
+    user_email = result['user_info']['email']
+    st.write(f"Logged in as: {user_email}")
+    # Your Smart ATS code here
+else:
+    st.warning("Please log in with Google to continue.")
 
