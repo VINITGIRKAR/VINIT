@@ -189,4 +189,4 @@ with results_tab:
         st.info("📝 Please upload and analyze resumes first.")
 
 # Footer
-st.markdown("<div class='footer'>Built with ❤️ using Streamlit and Gemini 1.5</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center;color:gray;margin-top:30px;'>Made with ❤️ using Streamlit and Gemini 1.5</div>", unsafe_allow_html=True)
