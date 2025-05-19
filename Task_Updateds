@@ -7,5 +7,5 @@ FastAPI and related imports and
 Local and internal imports
 
 Task done for an comman_function.py file:
-Changes updated in the  code for the function define as load_cites(user_id=None, district_id=None, state_id=None):
+Changes updated in the  code for the function define as load_cites():
 with an parameters as user_id,district_id and state_id
