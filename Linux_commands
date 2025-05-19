@@ -1,0 +1,109 @@
+Here’s a list of commonly used Linux commands, categorized for easy reference:
+
+---
+
+### 🔹 **Basic File and Directory Commands**
+
+| Command        | Description                          |
+| -------------- | ------------------------------------ |
+| `ls`           | List directory contents              |
+| `cd`           | Change directory                     |
+| `pwd`          | Show current directory path          |
+| `mkdir`        | Create a new directory               |
+| `rmdir`        | Remove an empty directory            |
+| `rm`           | Delete files or directories          |
+| `cp`           | Copy files or directories            |
+| `mv`           | Move or rename files                 |
+| `touch`        | Create an empty file                 |
+| `cat`          | Display file contents                |
+| `more`, `less` | View file contents page-by-page      |
+| `find`         | Search for files and directories     |
+| `locate`       | Quickly find files (uses a database) |
+
+---
+
+### 🔹 **File Permissions and Ownership**
+
+| Command | Description             |
+| ------- | ----------------------- |
+| `chmod` | Change file permissions |
+| `chown` | Change file owner       |
+| `chgrp` | Change group ownership  |
+
+---
+
+### 🔹 **System Information**
+
+| Command       | Description             |
+| ------------- | ----------------------- |
+| `uname -a`    | Show system information |
+| `top`, `htop` | Show running processes  |
+| `df -h`       | Show disk space usage   |
+| `du -sh`      | Show directory size     |
+| `free -h`     | Show memory usage       |
+| `uptime`      | Show system uptime      |
+| `whoami`      | Show current user       |
+
+---
+
+### 🔹 **Process Management**
+
+| Command     | Description                       |
+| ----------- | --------------------------------- |
+| `ps`        | Show running processes            |
+| `kill`      | Kill a process by PID             |
+| `killall`   | Kill a process by name            |
+| `bg` / `fg` | Run jobs in background/foreground |
+| `jobs`      | Show background jobs              |
+
+---
+
+### 🔹 **Networking**
+
+| Command             | Description                         |
+| ------------------- | ----------------------------------- |
+| `ping`              | Test network connection             |
+| `ifconfig` / `ip a` | Show IP address info                |
+| `netstat -tuln`     | Show open ports                     |
+| `ssh user@host`     | Connect to remote server            |
+| `scp`               | Securely copy files between systems |
+| `curl` / `wget`     | Download files from web             |
+
+---
+
+### 🔹 **Package Management (Debian/Ubuntu)**
+
+| Command       | Description         |
+| ------------- | ------------------- |
+| `apt update`  | Update package list |
+| `apt upgrade` | Upgrade packages    |
+| `apt install` | Install a package   |
+| `apt remove`  | Remove a package    |
+
+---
+
+### 🔹 **Archive and Compression**
+
+| Command                         | Description                  |
+| ------------------------------- | ---------------------------- |
+| `tar -czvf file.tar.gz folder/` | Create a compressed archive  |
+| `tar -xzvf file.tar.gz`         | Extract a compressed archive |
+| `zip -r file.zip folder/`       | Create a zip archive         |
+| `unzip file.zip`                | Extract a zip archive        |
+
+---
+
+### 🔹 **Other Useful Commands**
+
+| Command   | Description                    |
+| --------- | ------------------------------ |
+| `history` | Show command history           |
+| `alias`   | Create shortcuts for commands  |
+| `man`     | Show manual page for a command |
+| `echo`    | Display a line of text         |
+| `date`    | Show current date and time     |
+| `clear`   | Clear terminal screen          |
+
+---
+
+Would you like a printable PDF or cheat sheet version of this list?
