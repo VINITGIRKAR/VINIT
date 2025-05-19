@@ -1,0 +1,130 @@
+Great! Here are **Linux commands and VS Code usage tips specifically for Python development**:
+
+---
+
+### 🐍 **Python Setup on Linux**
+
+First, make sure Python and pip are installed:
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+python3 --version
+pip3 --version
+```
+
+You may also want a virtual environment tool:
+
+```bash
+pip3 install virtualenv
+```
+
+---
+
+### 🧰 **Setting Up a Python Project in VS Code**
+
+1. **Create a project directory**:
+
+```bash
+mkdir my-python-project
+cd my-python-project
+```
+
+2. **Create a virtual environment**:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. **Open the project in VS Code**:
+
+```bash
+code .
+```
+
+---
+
+### ⚙️ **Useful VS Code Commands for Python Projects**
+
+```bash
+code myscript.py              # Open a specific script
+code .                        # Open the entire folder as a project
+code --new-window             # Open in a new window
+code --install-extension ms-python.python   # Install Python extension
+```
+
+---
+
+### 📦 **Installing Packages**
+
+Inside your virtual environment:
+
+```bash
+pip install numpy pandas flask  # Replace with your needed packages
+```
+
+---
+
+### 🧪 **Running Python Code in VS Code**
+
+Once you're inside VS Code:
+
+* Open the terminal (\`Ctrl + \`\`)
+* Make sure your virtual environment is active
+* Run your code with:
+
+```bash
+python myscript.py
+```
+
+Or use the **VS Code "Run" button** after selecting the Python interpreter.
+
+
+Here are some **essential Linux commands related to using Visual Studio Code (VS Code)**:
+
+---
+
+### 🛠️ **Installing VS Code on Linux (Debian/Ubuntu-based)**
+
+```bash
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+```
+
+---
+
+### 🚀 **Launching VS Code**
+
+```bash
+code               # Opens VS Code
+code .             # Opens the current directory in VS Code
+code filename.py   # Opens a specific file in VS Code
+```
+
+---
+
+### 📁 **Useful VS Code Commands in Terminal**
+
+```bash
+code --help               # Shows all command line options
+code --version            # Displays the VS Code version
+code --new-window         # Opens a new VS Code window
+code --diff file1 file2   # Opens a diff view between two files
+code --install-extension <ext>   # Installs a specific extension
+code --list-extensions            # Lists all installed extensions
+code --uninstall-extension <ext> # Uninstalls a specific extension
+```
+
+---
+
+### 💡 Example: Installing Python Extension
+
+```bash
+code --install-extension ms-python.python
+```
+
