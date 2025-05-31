@@ -1,0 +1,11 @@
+(venv) vinit@VINIT:/mnt/c/Documents/nextwave_workspace/Backend/Nextwave$ pip show flexOps
+Name: flexOps
+Version: 0.1.448
+Summary: A flexible starter package for various service integrations
+Home-page: https://github.com/gitneural/flexOpsPackage
+Author: NeuralIT
+Author-email: neuralit@neuralit.com
+License:
+Location: /mnt/c/Documents/nextwave_workspace/Backend/Nextwave/venv/lib/python3.12/site-packages
+Requires: bcrypt, graypy, pymongo, pynsq, pyodbc, redis, requests, websocket-client
+Required-by:
