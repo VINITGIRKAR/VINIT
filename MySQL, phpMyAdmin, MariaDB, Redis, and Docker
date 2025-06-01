@@ -1,0 +1,131 @@
+Certainly! Below is a step-by-step guide to verify whether **MySQL, phpMyAdmin, MariaDB, Redis, and Docker** are successfully installed and running on your **Ubuntu (WSL)** system.
+
+---
+
+### **1. Check MySQL**
+MySQL is often replaced by MariaDB in Ubuntu, but if you installed it separately:
+
+#### **Check if MySQL is running:**
+```bash
+sudo systemctl status mysql
+```
+- If active (`Active: active (running)`), MySQL is running.
+- If not installed/enabled, you may see `Unit mysql.service could not be found.`
+
+#### **Login to MySQL:**
+```bash
+mysql -u root -p
+```
+- Enter your password when prompted.
+- If successful, you’ll see the MySQL prompt (`mysql>`). Type `exit` to leave.
+
+---
+
+### **2. Check MariaDB**
+MariaDB is a drop-in replacement for MySQL.
+
+#### **Check MariaDB status:**
+```bash
+sudo systemctl status mariadb
+```
+- `Active: active (running)` means it's working.
+
+#### **Login to MariaDB:**
+```bash
+sudo mariadb -u root
+```
+- If successful, you’ll see the MariaDB prompt (`MariaDB [(none)]>`). Type `exit` to leave.
+
+---
+
+### **3. Check phpMyAdmin**
+phpMyAdmin is a web-based MySQL/MariaDB administration tool.
+
+#### **Check if Apache/Nginx is running (required for phpMyAdmin):**
+```bash
+sudo systemctl status apache2   # If using Apache
+# or
+sudo systemctl status nginx     # If using Nginx
+```
+- Should be `active (running)`.
+
+#### **Access phpMyAdmin in browser:**
+- Open your browser and go to:
+  ```
+  http://localhost/phpmyadmin
+  ```
+- If you get a login page, it's working. Log in with your MySQL/MariaDB credentials.
+
+#### **Check phpMyAdmin files:**
+```bash
+ls /usr/share/phpmyadmin
+```
+- If the directory exists, phpMyAdmin is installed.
+
+---
+
+### **4. Check Redis**
+Redis is an in-memory data store.
+
+#### **Check Redis status:**
+```bash
+sudo systemctl status redis-server
+```
+- `Active: active (running)` means it's working.
+
+#### **Test Redis CLI:**
+```bash
+redis-cli ping
+```
+- If it responds with `PONG`, Redis is running.
+
+---
+
+### **5. Check Docker**
+Docker allows containerization.
+
+#### **Check Docker service status:**
+```bash
+sudo systemctl status docker
+```
+- Should show `Active: active (running)`.
+
+#### **Verify Docker installation:**
+```bash
+docker --version
+```
+- Should return something like `Docker version 20.10.12, build e91ed57`.
+
+#### **Run a test container:**
+```bash
+docker run hello-world
+```
+- If you see `Hello from Docker!`, Docker is working correctly.
+
+---
+
+### **Troubleshooting Common Issues in WSL**
+- **If `systemctl` doesn’t work in WSL**:  
+  WSL doesn’t fully support `systemd`. Instead, manually start services:
+  ```bash
+  sudo service mysql start    # or mariadb
+  sudo service redis-server start
+  sudo service docker start
+  ```
+- **If phpMyAdmin isn't accessible**:  
+  Ensure Apache/Nginx is running and configured correctly.
+- **Docker not starting?**  
+  You might need to start Docker Desktop (Windows) and ensure WSL integration is enabled.
+
+---
+
+### **Summary of Commands to Verify Everything**
+| Service     | Check Status Command       | Test Command               |
+|-------------|----------------------------|----------------------------|
+| **MySQL**   | `sudo systemctl status mysql` | `mysql -u root -p`         |
+| **MariaDB** | `sudo systemctl status mariadb` | `sudo mariadb -u root`     |
+| **phpMyAdmin** | Check Apache/Nginx + `http://localhost/phpmyadmin` | `ls /usr/share/phpmyadmin` |
+| **Redis**   | `sudo systemctl status redis-server` | `redis-cli ping`           |
+| **Docker**  | `sudo systemctl status docker` | `docker run hello-world`   |
+
+If all checks pass, your setup is working correctly! Let me know if you encounter any issues. 🚀
